@@ -1,16 +1,19 @@
-<div class="container">
-    <div class="content">
-        {{#each albumsSearch}}
-        <div class="result">
-            {{#each this.images}}
-                {{#if @first}}
-                    <img src={{this.url}}> 
-                {{/if}}
-            {{/each}}
+<link rel="stylesheet" href="../styles/albumStyle.css">
+<h2 class="title-h2">Albums for the: {{artistName}}</h2>
+<div class="content">
+    {{#each albumsSearch}}
+    <div class="result">
+        {{#each this.images}}
+            {{#if @first}}
+                <img src={{this.url}} style="width: 200px"> 
+            {{/if}}
+        {{/each}}
+        <div class="foot-card">
             <h2>{{this.name}}</h2>
             <a href={{concat '/tracks/' id}}>View Tracks</a>       
         </div>
-        {{else}}
-        {{/each}}
     </div>
+    {{else}}
+        <span>Oops, no albums were found ...</span>
+    {{/each}}
 </div>
