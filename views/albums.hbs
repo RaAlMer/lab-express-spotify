@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="content">
+        {{#each albumsSearch}}
+        <div class="result">
+            {{#each this.images}}
+                {{#if @first}}
+                    <img src={{this.url}}> 
+                {{/if}}
+            {{/each}}
+            <h2>{{this.name}}</h2>
+            <a href={{concat '/albums/' id}}>View Tracks</a>       
+        </div>
+        {{else}}
+        {{/each}}
+    </div>
+</div>
